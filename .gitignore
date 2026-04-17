@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables (IMPORTANT)
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Build / cache
+build/
+dist/
+*.egg-info/
+
+# Docker
+*.tar
+
+# Cloud / deployment
+.gcloud/
+.cloudbuild/
+
+# Temporary files
+*.tmp
+*.bak
