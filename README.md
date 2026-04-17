@@ -46,7 +46,7 @@ This project is designed to provide a user interface for interacting with a data
     * **`DATA_PROFILES_TABLE_FULL_ID`**: Optional. Full BigQuery table ID where data profiling results are stored. Set to None or an empty string if not used. (e.g., "my_project.profiling_dataset.all_profiles", None, "")
 
     ```python
-    MODEL="gemini-2.5-pro-preview-03-25"
+    MODEL="gemini-2.5-pro"
     PROJECT_ID=""
     LOCATION=""
     DATASET_NAME=""
