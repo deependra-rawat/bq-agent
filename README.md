@@ -70,9 +70,9 @@ For a quick start and testing the core agent functionality with a minimalistic U
     *   Ensure you have Python installed 
     *   Create and activate a virtual environment (optional but recommended):
         ```bash
-        python3 -m venv venv
-        source venv/bin/activate  # On Linux/macOS
-        # venv\Scripts\activate  # On Windows
+        python -m venv .venv
+        source .venv/bin/activate  # On Linux/macOS
+        # .venv\Scripts\activate  # On Windows
         ```
     *   Install the required Python packages, including the `google-adk`:
         ```bash
