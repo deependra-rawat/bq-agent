@@ -25,7 +25,7 @@
   RUN pip install --no-cache-dir -r requirements.txt
   
   # Copy the built frontend from the builder stage
-  COPY --from=builder /app/frontend/build ./frontend/build
+  # COPY --from=builder /app/frontend/build ./frontend/build
   
   # Copy the backend Flask application code
   COPY backend ./backend
