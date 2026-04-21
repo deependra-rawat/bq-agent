@@ -1,11 +1,11 @@
 # --- Stage 1: FE Build ---
-  FROM node:lts-alpine AS builder
-  WORKDIR /app/frontend
-  COPY frontend/package.json frontend/yarn.lock* frontend/package-lock.json* ./
-  RUN if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
-      else npm install --legacy-peer-deps; fi
-  COPY frontend/ ./
-  RUN npm run build
+  # FROM node:lts-alpine AS builder
+  # WORKDIR /app/frontend
+  # COPY frontend/package.json frontend/yarn.lock* frontend/package-lock.json* ./
+  # RUN if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
+  #     else npm install --legacy-peer-deps; fi
+  # COPY frontend/ ./
+  # RUN npm run build
   
   # --- Stage 2: Setup Python Runtime Environment ---
   FROM python:3.12.7-slim AS python-base
@@ -40,4 +40,5 @@
   EXPOSE 8080
   
   # Run the entrypoint script when the container starts
-  CMD ["./entrypoint.sh"]
+  # CMD ["./entrypoint.sh"]
+   CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "--timeout", "120", "backend.app:app"]

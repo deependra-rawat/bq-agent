@@ -1,6 +1,7 @@
 import os
 import logging
 from flask import Flask, send_from_directory, abort, jsonify, request, current_app
+from flask_cors import CORS
 from dotenv import load_dotenv
 import functools
 import time
@@ -84,7 +85,7 @@ def create_app():
     """Application Factory Function"""
     # Configure static files to be served from /static URL path, pointing to frontend/build/static directory
     app = Flask(__name__, static_folder='../frontend/build/static', static_url_path='/static')
-
+    cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
     frontend_build_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'frontend', 'build'))
     app.config['FRONTEND_BUILD_DIR'] = frontend_build_path
     logging.info(f"Frontend build directory: {frontend_build_path}")
